@@ -1,78 +1,79 @@
 {
-    "name": "othello-game",
-    "version": "0.1.0",
-    "description": "Othello game with local LLM AI opponent",
-    "main": "src/main/main.js",
-    "scripts": {
-        "start": "electron .",
-        "dev": "NODE_ENV=development electron .",
-        "rebuild": "electron-rebuild -f -w node-llama-cpp",
-        "clean": "rm -rf dist",
-        "prepackage": "npm run clean && npm run rebuild",
-        "package:mac": "npm run prepackage && npm run build:mac",
-        "package:dir": "npm run prepackage && npm run build:dir",
-        "package": "npm run prepackage && npm run build",
-        "pack": "npm run package:dir",
-        "dist": "npm run package:mac",
-        "build:mac": "electron-builder --mac",
-        "build:dir": "electron-builder --dir",
-        "build": "electron-builder",
-        "build:mac:arm64": "electron-builder --mac --arm64",
-        "build:mac:x64": "electron-builder --mac --x64",
-        "test-package": "npm run clean && electron-builder --dir"
-    },
-    "keywords": [
-        "othello",
-        "reversi",
-        "ai",
-        "llm",
-        "electron",
-        "game"
-    ],
-    "author": "",
-    "license": "MIT",
-    "dependencies": {
-        "node-llama-cpp": "^3.0.0",
-        "better-sqlite3": "^11.0.0"
-    },
-    "devDependencies": {
-        "electron": "^28.0.0",
-        "electron-builder": "^24.9.1",
-        "electron-rebuild": "^3.2.9"
-    },
-    "build": {
-        "appId": "com.othello.game",
-        "productName": "Othello",
-        "mac": {
-            "category": "public.app-category.games",
-            "target": [
-                {
-                    "target": "dmg",
-                    "arch": [
-                        "arm64",
-                        "x64"
-                    ]
-                },
-                {
-                    "target": "zip",
-                    "arch": [
-                        "arm64",
-                        "x64"
-                    ]
-                }
-            ],
-            "hardenedRuntime": true,
-            "gatekeeperAssess": false,
-            "entitlements": "build/entitlements.mac.plist",
-            "entitlementsInherit": "build/entitlements.mac.plist"
+  "name": "othello-game",
+  "version": "0.1.0",
+  "description": "Othello game with local LLM AI opponent",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "NODE_ENV=development electron .",
+    "rebuild": "electron-rebuild -f -w node-llama-cpp",
+    "clean": "rm -rf dist",
+    "prepackage": "npm run clean && npm run rebuild",
+    "package:mac": "npm run prepackage && npm run build:mac",
+    "package:dir": "npm run prepackage && npm run build:dir",
+    "package": "npm run prepackage && npm run build",
+    "pack": "npm run package:dir",
+    "dist": "npm run package:mac",
+    "build:mac": "electron-builder --mac",
+    "build:dir": "electron-builder --dir",
+    "build": "electron-builder",
+    "build:mac:arm64": "electron-builder --mac --arm64",
+    "build:mac:x64": "electron-builder --mac --x64",
+    "test-package": "npm run clean && electron-builder --dir"
+  },
+  "keywords": [
+    "othello",
+    "reversi",
+    "ai",
+    "llm",
+    "electron",
+    "game"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-llama-cpp": "^3.0.0",
+    "better-sqlite3": "^11.0.0"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "electron-rebuild": "^3.2.9"
+  },
+  "build": {
+    "appId": "com.othello.game",
+    "productName": "Othello",
+    "mac": {
+      "category": "public.app-category.games",
+      "icon": "build/icon.png",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
         },
-        "files": [
-            "src/**/*",
-            "package.json"
-        ],
-        "directories": {
-            "buildResources": "build",
-            "output": "dist"
+        {
+          "target": "zip",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
         }
+      ],
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
     }
+  }
 }
