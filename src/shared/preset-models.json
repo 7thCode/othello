@@ -1,0 +1,82 @@
+{
+    "models": [
+        {
+            "id": "tinyllama-1.1b-chat",
+            "name": "TinyLlama 1.1B Chat",
+            "author": "TinyLlama",
+            "size": 669000000,
+            "memoryRequired": 2147483648,
+            "quantization": "Q4_K_M",
+            "license": "Apache 2.0",
+            "licenseUrl": "https://choosealicense.com/licenses/apache-2.0/",
+            "commercial": true,
+            "downloadUrl": "https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf",
+            "tags": [
+                "tiny",
+                "ultra-fast",
+                "commercial",
+                "beginner"
+            ],
+            "difficulty": "easy",
+            "description": "超高速レスポンス、初心者向けAI"
+        },
+        {
+            "id": "phi-3-mini-4k-instruct",
+            "name": "Phi-3 Mini 4K Instruct",
+            "author": "Microsoft",
+            "size": 2359296000,
+            "memoryRequired": 4294967296,
+            "quantization": "Q4_K_M",
+            "license": "MIT",
+            "licenseUrl": "https://choosealicense.com/licenses/mit/",
+            "commercial": true,
+            "downloadUrl": "https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF/resolve/main/Phi-3-mini-4k-instruct-Q4_K_M.gguf",
+            "tags": [
+                "commercial",
+                "small",
+                "efficient",
+                "balanced"
+            ],
+            "difficulty": "medium",
+            "description": "速度と強さのバランス型"
+        },
+        {
+            "id": "mistral-7b-instruct-v0.2",
+            "name": "Mistral 7B Instruct v0.2",
+            "author": "Mistral AI",
+            "size": 4404019200,
+            "memoryRequired": 6442450944,
+            "quantization": "Q4_K_M",
+            "license": "Apache 2.0",
+            "licenseUrl": "https://choosealicense.com/licenses/apache-2.0/",
+            "commercial": true,
+            "downloadUrl": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q4_K_M.gguf",
+            "tags": [
+                "commercial",
+                "high-performance",
+                "advanced"
+            ],
+            "difficulty": "hard",
+            "description": "高度な戦略、上級者向けAI"
+        },
+        {
+            "id": "qwen2.5-7b-instruct",
+            "name": "Qwen 2.5 7B Instruct",
+            "author": "Alibaba",
+            "size": 4515315712,
+            "memoryRequired": 6442450944,
+            "quantization": "Q4_K_M",
+            "license": "Apache 2.0",
+            "licenseUrl": "https://choosealicense.com/licenses/apache-2.0/",
+            "commercial": true,
+            "downloadUrl": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/main/qwen2.5-7b-instruct-q4_k_m.gguf",
+            "tags": [
+                "multilingual",
+                "commercial",
+                "strong-reasoning"
+            ],
+            "difficulty": "hard",
+            "description": "多言語対応、強力な推論能力"
+        }
+    ]
+}

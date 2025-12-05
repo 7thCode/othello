@@ -1,0 +1,82 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "npm: start",
+            "type": "npm",
+            "script": "start",
+            "problemMatcher": [],
+            "detail": "electron ."
+        },
+        {
+            "label": "npm: dev",
+            "type": "npm",
+            "script": "dev",
+            "problemMatcher": [],
+            "detail": "NODE_ENV=development electron ."
+        },
+        {
+            "label": "npm: rebuild",
+            "type": "npm",
+            "script": "rebuild",
+            "problemMatcher": [],
+            "detail": "electron-rebuild -f -w node-llama-cpp"
+        },
+        {
+            "label": "npm: clean",
+            "type": "npm",
+            "script": "clean",
+            "problemMatcher": [],
+            "detail": "rm -rf dist"
+        },
+        {
+            "label": "npm: pack",
+            "type": "npm",
+            "script": "pack",
+            "problemMatcher": [],
+            "detail": "npm run package:dir",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "npm: dist",
+            "type": "npm",
+            "script": "dist",
+            "problemMatcher": [],
+            "detail": "npm run package:mac",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "npm: test-package",
+            "type": "npm",
+            "script": "test-package",
+            "problemMatcher": [],
+            "detail": "npm run clean && electron-builder --dir"
+        },
+        {
+            "label": "Build: macOS DMG",
+            "type": "shell",
+            "command": "npm run dist",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Build: Test Package",
+            "type": "shell",
+            "command": "npm run test-package",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        }
+    ]
+}

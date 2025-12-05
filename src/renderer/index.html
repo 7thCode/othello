@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Othello</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/board.css">
+  <link rel="stylesheet" href="styles/model-store.css">
+  <link rel="stylesheet" href="styles/settings.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header-left">
+      <h1>🎮 Othello</h1>
+      <div class="model-info">
+        <span id="currentModel">モデル未ロード</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <button id="modelStoreBtn" class="btn btn-icon" title="モデルストア">🏪</button>
+      <button id="settingsBtn" class="btn btn-icon" title="設定">⚙️</button>
+      <button id="newGameBtn" class="btn btn-primary">新しいゲーム</button>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="main-content">
+    <!-- ゲーム情報 -->
+    <div class="game-info">
+      <div class="score-panel">
+        <div class="score-item">
+          <div class="piece black"></div>
+          <span class="score-label">黒</span>
+          <span id="blackScore" class="score-value">2</span>
+        </div>
+        <div class="score-item">
+          <div class="piece white"></div>
+          <span class="score-label">白</span>
+          <span id="whiteScore" class="score-value">2</span>
+        </div>
+      </div>
+      <div class="turn-indicator">
+        <span id="turnText">黒のターン</span>
+        <div id="aiThinking" class="ai-thinking" style="display: none;">
+          <div class="spinner"></div>
+          <span>AI思考中...</span>
+        </div>
+      </div>
+      <div class="game-status">
+        <span id="statusText">ゲームを開始してください</span>
+      </div>
+    </div>
+
+    <!-- オセロボード -->
+    <div class="board-container">
+      <div id="board" class="board"></div>
+    </div>
+  </main>
+
+  <!-- モデルストアモーダル -->
+  <div id="modelStoreModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>モデルストア</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="model-store-tabs">
+          <button class="tab-btn active" data-tab="presets">プリセット</button>
+          <button class="tab-btn" data-tab="installed">インストール済み</button>
+        </div>
+        <div class="tab-content">
+          <div id="presetsTab" class="tab-pane active"></div>
+          <div id="installedTab" class="tab-pane"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 設定パネルモーダル -->
+  <div id="settingsModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>設定</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="settings-section">
+          <h3>モデル選択</h3>
+          <select id="modelSelect" class="form-select">
+            <option value="">モデルを選択...</option>
+          </select>
+          <button id="loadModelBtn" class="btn btn-primary">モデルをロード</button>
+          <div id="loadStatus" class="status-text"></div>
+        </div>
+
+        <div class="settings-section">
+          <h3>AI難易度</h3>
+          <div class="difficulty-buttons">
+            <button class="difficulty-btn" data-difficulty="easy">
+              <span class="difficulty-name">初級</span>
+              <span class="difficulty-desc">ランダム性が高い</span>
+            </button>
+            <button class="difficulty-btn active" data-difficulty="medium">
+              <span class="difficulty-name">中級</span>
+              <span class="difficulty-desc">バランス型</span>
+            </button>
+            <button class="difficulty-btn" data-difficulty="hard">
+              <span class="difficulty-name">上級</span>
+              <span class="difficulty-desc">戦略的</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3>ゲーム設定</h3>
+          <div class="form-group">
+            <label>先手/後手</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="playerColor" value="black" checked>
+                <span>黒（先手）</span>
+              </label>
+              <label>
+                <input type="radio" name="playerColor" value="white">
+                <span>白（後手）</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="showHints" checked>
+              <span>合法手のヒントを表示</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" type="module"></script>
+  <script src="components/model-store.js" type="module"></script>
+  <script src="components/settings-panel.js" type="module"></script>
+</body>
+</html>

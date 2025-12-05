@@ -1,0 +1,56 @@
+/* 設定パネルスタイル */
+
+.settings-section {
+    margin-bottom: 32px;
+}
+
+.settings-section:last-child {
+    margin-bottom: 0;
+}
+
+.settings-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.difficulty-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.difficulty-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.difficulty-btn:hover {
+    border-color: var(--accent-primary);
+    background: rgba(76, 175, 80, 0.05);
+}
+
+.difficulty-btn.active {
+    border-color: var(--accent-primary);
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.difficulty-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.difficulty-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
