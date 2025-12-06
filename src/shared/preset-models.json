@@ -1,6 +1,21 @@
 {
   "models": [
     {
+      "id": "llama-3.2-1b-instruct",
+      "name": "Llama 3.2 1B Instruct",
+      "author": "Meta",
+      "size": 790000000,
+      "memoryRequired": 2147483648,
+      "quantization": "Q4_K_M",
+      "license": "Llama 3.2 Community License",
+      "licenseUrl": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/LICENSE",
+      "commercial": false,
+      "downloadUrl": "https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+      "tags": ["ultra-fast", "beginner", "latest", "othello-optimized"],
+      "difficulty": "easy",
+      "description": "Latest Meta model with superior reasoning for Othello. Much smarter than TinyLlama with similar speed."
+    },
+    {
       "id": "tinyllama-1.1b-chat",
       "name": "TinyLlama 1.1B Chat",
       "author": "TinyLlama",
@@ -26,9 +41,9 @@
       "licenseUrl": "https://ai.google.dev/gemma/terms",
       "commercial": true,
       "downloadUrl": "https://huggingface.co/bartowski/gemma-2-2b-it-GGUF/resolve/main/gemma-2-2b-it-Q4_K_M.gguf",
-      "tags": ["ultra-light", "fast", "commercial"],
+      "tags": ["ultra-light", "fast", "commercial", "othello-optimized"],
       "difficulty": "easy",
-      "description": "Ultra-lightweight model ideal for low-memory systems with commercial license"
+      "description": "⭐ BEST for beginners! Google's latest with strong logical thinking for board game strategies."
     },
     {
       "id": "llama-3.2-3b-instruct",
@@ -41,9 +56,9 @@
       "licenseUrl": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/LICENSE",
       "commercial": false,
       "downloadUrl": "https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q4_K_M.gguf",
-      "tags": ["fast", "multilingual", "instruct"],
+      "tags": ["fast", "multilingual", "instruct", "othello-optimized"],
       "difficulty": "medium",
-      "description": "Latest Llama model optimized for instruction following with Metal GPU support"
+      "description": "⭐ BEST balanced option! Perfect mix of speed and strategic thinking for intermediate players."
     },
     {
       "id": "phi-3-mini-4k-instruct",
@@ -89,6 +104,21 @@
       "tags": ["multilingual", "commercial", "strong-reasoning"],
       "difficulty": "hard",
       "description": "Excellent multilingual support with strong reasoning capabilities"
+    },
+    {
+      "id": "deepseek-r1-distill-qwen-7b",
+      "name": "DeepSeek-R1 Distill Qwen 7B",
+      "author": "DeepSeek AI",
+      "size": 4832930816,
+      "memoryRequired": 8589934592,
+      "quantization": "Q4_K_M",
+      "license": "MIT",
+      "licenseUrl": "https://choosealicense.com/licenses/mit/",
+      "commercial": true,
+      "downloadUrl": "https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-7B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf",
+      "tags": ["reasoning", "cot", "commercial", "expert", "othello-optimized"],
+      "difficulty": "hard",
+      "description": "⭐ STRONGEST for Othello! Uses chain-of-thought reasoning to deeply analyze board positions and plan ahead."
     },
     {
       "id": "codellama-7b-instruct",
